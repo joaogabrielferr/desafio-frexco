@@ -1,0 +1,183 @@
+*{
+  margin: 0;
+  font-family: 'Roboto';
+}
+
+.header{
+  width: 100%;
+  height: 3.5em;
+  background-color: #0288d1;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.inner-header{
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.listagemItems{
+  width:80em;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1em;
+  column-gap: 1em;
+  margin-top: 10em;
+}
+
+.item{
+  width: 100%;
+  height: 13em;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.info-nutri{
+  text-align: left;
+}
+
+.item-nutri{
+  
+  width: 10em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Carrinho{
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5.5em;
+  text-align: center;
+
+}
+
+.ItemNoCarrinho{
+  width: 50em;
+  height: 10em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.1em solid #0288d1;
+  border-radius: 0.3em;
+  margin-bottom: 1em;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;  
+}
+
+.Operacoes{
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+}
+
+.opcoes-header{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 20em;
+}
+
+.qtd-carrinho{
+  background-color: white;
+  color: #0288d1;
+  padding: 0.3em;
+  border-radius: 100%;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+
+}
+
+.Busca{
+  width: 100%;
+  height: 5em;
+  background-color: #0288d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top:3.5em;
+  left:0;
+  z-index: 1;
+}
+
+.nome-item{
+  color: #0288d1;
+  font-size: 2em;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+@media only screen and (max-width: 1120px) {
+ 
+  .listagemItems{
+    width:80%;
+    grid-template-columns: auto;
+  }
+
+}
+
+
+@media only screen and (max-width: 500px) {
+ 
+  .inner-header{
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .header{
+    height: 5.5em;
+  }
+
+  .Busca{
+    top:5.5em;
+  }
+
+}
+
+@media only screen and (max-width: 860px){
+
+  .ItemNoCarrinho{
+    width: 80%;
+    flex-direction: column; 
+  }
+
+  .Operacoes{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+}
