@@ -4,25 +4,9 @@ import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Button from "@mui/material/Button";
 
-interface InfoNutricional {
-  calories: number;
-  carbohydrates: number;
-  fat: number;
-  protein: number;
-  sugar: number;
-}
 
-interface Item {
-  nome: string;
-  id: number;
-  nutricional: InfoNutricional;
-}
+import {Item,ItemCarrinho,InfoNutricional} from '../Interfaces';
 
-interface ItemCarrinho {
-  item: Item;
-  id: number;
-  quantidade: number;
-}
 
 interface Props {
   carrinho: ItemCarrinho[];
@@ -41,13 +25,9 @@ const Header: React.FC<Props> = ({ carrinho }) => {
           <Button
             style={{ color: "white", border: "0.1em solid white" }}
             variant="outlined"
+            href = "/carrinho"
           >
-            <Link
-              to="/carrinho"
-              style={{ color: "inherit", textDecoration: "inherit" }}
-            >
-              ABRIR CARRINHO
-            </Link>
+            abrir carrinho
           </Button>
           <Link
             to="/carrinho"

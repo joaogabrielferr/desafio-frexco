@@ -5,25 +5,8 @@ import Busca from '../Componentes/Busca';
 import {useEffect,useState} from 'react';
 import axios from 'axios'
 
-interface InfoNutricional {
-    calories: number;
-    carbohydrates: number;
-    fat: number;
-    protein: number;
-    sugar: number;
-  }
-  
-  interface Item {
-    nome: string;
-    id : number;
-    nutricional: InfoNutricional;
-  }
-  
-  interface ItemCarrinho {
-    item: Item;
-    id : number;
-    quantidade: number;
-  }
+
+import {Item,ItemCarrinho,InfoNutricional} from '../Interfaces';
 
 
 interface Props{
@@ -46,6 +29,7 @@ const Homepage:React.FC<Props> = ({itens,setItens,itensOriginal,setItensOriginal
 
     useEffect(() => {
 
+      //pega os dados da API e do carrinho no LocalStorage
         const itens = PegaItenslocalStorage();
         const carrinho = PegaCarrinholocalStorage();
         
@@ -55,15 +39,14 @@ const Homepage:React.FC<Props> = ({itens,setItens,itensOriginal,setItensOriginal
         }
 
         if(itens !== false)
-        {
-            //pega os dados da API no LocalStorage
+        {   
             setItens(itens);
             setItensOriginal(itens);
         }else{
           setCarregando(true);
           //Entrando na aplicação pela primeira vez, faz a fetch na API
         axios
-          .get("http://localhost:8000/api")
+          .get("https://server-desafio-frexco.herokuapp.com/api")
           .then((resposta) => {
             let lista: Item[] = [];
             for (let i = 0; i < resposta.data.length; i++) {

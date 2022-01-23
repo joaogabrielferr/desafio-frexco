@@ -15,25 +15,7 @@ import Carrinho from './Paginas/Carrinho';
 
 
 
-interface InfoNutricional {
-  calories: number;
-  carbohydrates: number;
-  fat: number;
-  protein: number;
-  sugar: number;
-}
-
-interface Item {
-  nome: string;
-  id : number;
-  nutricional: InfoNutricional;
-}
-
-interface ItemCarrinho {
-  item: Item;
-  id : number;
-  quantidade: number;
-}
+import {Item,ItemCarrinho,InfoNutricional} from './Interfaces';
 
 
 
@@ -103,9 +85,9 @@ const PegaCarrinholocalStorage = () =>{
     setCarrinho( carrinho.filter((itemCarrinho)=> itemCarrinho.id !== item.id) );
   }
 
+  //filtra as frutas baseado no que esta escrito no input da homepage
   const BuscaFruta = (nome:string) =>{
 
-    console.log(nome);
     if(nome === "")
     {
       setItens(itensOriginal);

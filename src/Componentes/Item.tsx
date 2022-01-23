@@ -1,7 +1,8 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import { useState, useEffect } from "react";
-import { Grid } from "@mui/material";
+
+
 
 interface InfoNutricional {
   calories: number;
@@ -13,15 +14,16 @@ interface InfoNutricional {
 
 interface Item {
   nome: string;
-  id: number;
+  id : number;
   nutricional: InfoNutricional;
 }
 
 interface ItemCarrinho {
   item: Item;
-  id: number;
+  id : number;
   quantidade: number;
-}
+} 
+
 
 interface Props {
   item: Item;
