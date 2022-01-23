@@ -21,7 +21,7 @@ import {Item,ItemCarrinho,InfoNutricional} from './Interfaces';
 
 const App: React.FC = () => {
 
-  const [itens, setItens] = useState<Item[]>([]); //itens que aparecem na homepage, pode ser filtrados na busca
+  const [itens, setItens] = useState<Item[]>([]); //itens que aparecem na homepage, podem ser filtrados na busca
   const [itensOriginal, setItensOriginal] = useState<Item[]>([]); //para utilizar na busca,contem todos os itens
   const [carrinho, setCarrinho] = useState<ItemCarrinho[]>([]);
 
