@@ -34,28 +34,16 @@ interface Props {
 const Item: React.FC<Props> = ({ item, carrinho, AddItemCarrinho }) => {
   const [qtdNoCarrinho, setQtdNoCarrinho] = useState(0);
 
-  //sempre que o carrinho mudar, atualizar a os items da homepage com a quantidade de unidades de um item no carrinho
   useEffect(() => {
-    let qtd = carrinho.find((x) => x.id === item.id);
-    if (qtd) {
-      setQtdNoCarrinho(qtd.quantidade);
-    }
+    // let qtd = carrinho.find((x) => x.id === item.id);
+    // if (qtd) {
+    //   setQtdNoCarrinho(qtd.quantidade);
+    // }
+
+    
+
   }, [carrinho]);
 
-
-  const AddItem = () =>{
-
-    const botao:HTMLElement | null = document.getElementById(`${item.id}`);
-    if(botao !== null)
-      botao.innerText = "1 unidade adicionada";
-    setTimeout(() => {
-      if(botao !== null)
-        botao.innerText = "Adicionar ao carrinho";
-    }, 500);
-
-    AddItemCarrinho(item);
-
-  }
 
   return (
     <div className="item">
@@ -80,7 +68,7 @@ const Item: React.FC<Props> = ({ item, carrinho, AddItemCarrinho }) => {
         </div>
       </div>
       <br />
-      <Button variant="contained" id = {`${item.id}`}  onClick={() => AddItem()}>
+      <Button variant="contained" id = {`${item.id}`}  onClick={() => AddItemCarrinho(item)}>
         Adicionar ao carrinho
       </Button>
     </div>

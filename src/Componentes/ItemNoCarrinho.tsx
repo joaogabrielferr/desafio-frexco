@@ -1,6 +1,7 @@
 import React from 'react'
 import {Button} from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useState, useEffect } from "react";
 
 
 import {Item,ItemCarrinho,InfoNutricional} from '../Interfaces';
@@ -16,6 +17,7 @@ interface Props{
 
 const ItemNoCarrinho:React.FC<Props> = ({item,DiminuiQtdItemCarrinho,ApagaItemCarrinho,AddItemCarrinho}) =>{
 
+    
 
     return(
         <div className="ItemNoCarrinho">
