@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemComponente from './Item'
+import {useEffect} from 'react';
 
 
 import {Item,ItemCarrinho,InfoNutricional} from '../Interfaces';
@@ -16,6 +17,12 @@ import {Item,ItemCarrinho,InfoNutricional} from '../Interfaces';
 
 
 const ListagemItems:React.FC<Props> = ({itens,setItens,itensOriginal,setItensOriginal,carrinho,AddItemCarrinho}) => {
+
+  useEffect(()=>{
+    // console.log("ListagemItems atualizada quando o carrinho for alterado.");
+  },[carrinho]);
+
+
   return(
       <div className="listagemItems">
         
