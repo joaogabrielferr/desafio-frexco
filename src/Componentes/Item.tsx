@@ -34,10 +34,6 @@ interface Props {
 const Item: React.FC<Props> = ({ item, carrinho, AddItemCarrinho }) => {
   const [qtdNoCarrinho, setQtdNoCarrinho] = useState(0);
 
-  useEffect(() => {
-    //console.log(carrinho);
-  }, [carrinho]);
-
 
   return (
     <div className="item">

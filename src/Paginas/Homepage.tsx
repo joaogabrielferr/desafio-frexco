@@ -31,11 +31,12 @@ const Homepage:React.FC<Props> = ({itens,setItens,itensOriginal,setItensOriginal
 
       //pega os dados da API e do carrinho no LocalStorage
         const itens = PegaItenslocalStorage();
-        const carrinho = PegaCarrinholocalStorage();
+        const carrinho_updt = PegaCarrinholocalStorage();
         
-        if(carrinho !== false)
+        if(carrinho_updt !== false)
         {
-          setCarrinho(carrinho);
+          console.log("pegou carrinho da local em home:",carrinho);
+          setCarrinho(prevCarrinho => carrinho_updt);
         }
 
         if(itens !== false)

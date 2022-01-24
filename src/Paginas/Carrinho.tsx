@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Header from "../Componentes/Header";
 import ItemNoCarrinho from "../Componentes/ItemNoCarrinho";
+import { Link } from "react-router-dom";
 
 
 import {Item,ItemCarrinho,InfoNutricional} from '../Interfaces';
@@ -24,20 +25,19 @@ const Carrinho: React.FC<Props> = ({carrinho,setCarrinho,DiminuiQtdItemCarrinho,
   AddItemCarrinho,
 }) => {
 
-  useEffect(()=>{
-    //console.log(carrinho);
-  },[carrinho]);
 
   useEffect(() => {
     const cart = PegaCarrinholocalStorage();
     if (cart !== false) {
-      setCarrinho(cart);
+      console.log("pegou carrinho da local em carrinho:",carrinho);
+      setCarrinho(prevCarrinho => cart);
     }
   }, []);
 
   return (
     <div className="Carrinho">
       <Header carrinho={carrinho}></Header>
+      <Link to = "/" style={{ textDecoration: 'inherit',color:"#0288d1"}}><h1>← Voltar</h1></Link>
       <h1>SEU CARRINHO</h1>
       <div className="itensCarrinho-container">
         {carrinho.map((item, index) => (
