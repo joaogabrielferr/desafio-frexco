@@ -73,8 +73,8 @@ const PegaCarrinholocalStorage = () =>{
   //diminui uma unidade de um item no carrinho
   const DiminuiQtdItemCarrinho = (item:Item) =>{
 
-    //const aux : ItemCarrinho[] = carrinho.map((itemCarrinho)=> itemCarrinho.id === item.id ? {...itemCarrinho,quantidade : itemCarrinho.quantidade-1} : itemCarrinho); 
-    //localStorage.setItem('carrinhoDFXC',JSON.stringify(aux));
+    const aux : ItemCarrinho[] = carrinho.map((itemCarrinho)=> itemCarrinho.id === item.id ? {...itemCarrinho,quantidade : itemCarrinho.quantidade-1} : itemCarrinho); 
+    localStorage.setItem('carrinhoDFXC',JSON.stringify(aux));
     setCarrinho( prevCarrinho => prevCarrinho.map((itemCarrinho)=> itemCarrinho.id === item.id ? {...itemCarrinho,quantidade : itemCarrinho.quantidade-1} : itemCarrinho )   );
   }
 
