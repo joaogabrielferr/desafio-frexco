@@ -42,6 +42,21 @@ const Item: React.FC<Props> = ({ item, carrinho, AddItemCarrinho }) => {
     }
   }, [carrinho]);
 
+
+  const AddItem = () =>{
+
+    const botao:HTMLElement | null = document.getElementById(`${item.id}`);
+    if(botao !== null)
+      botao.innerText = "1 unidade adicionada";
+    setTimeout(() => {
+      if(botao !== null)
+        botao.innerText = "Adicionar ao carrinho";
+    }, 500);
+
+    AddItemCarrinho(item);
+
+  }
+
   return (
     <div className="item">
       <h3 className="nome-item">{item.nome}</h3>
@@ -65,12 +80,8 @@ const Item: React.FC<Props> = ({ item, carrinho, AddItemCarrinho }) => {
         </div>
       </div>
       <br />
-      <Button variant="contained" onClick={() => AddItemCarrinho(item)}>
-        {qtdNoCarrinho === 0
-          ? "Adicionar ao carrinho"
-          : qtdNoCarrinho === 1
-          ? "1 unidade no carrinho"
-          : qtdNoCarrinho + " unidades no carrinho"}
+      <Button variant="contained" id = {`${item.id}`}  onClick={() => AddItem()}>
+        Adicionar ao carrinho
       </Button>
     </div>
   );
