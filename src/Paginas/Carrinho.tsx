@@ -24,6 +24,9 @@ const Carrinho: React.FC<Props> = ({carrinho,setCarrinho,DiminuiQtdItemCarrinho,
   AddItemCarrinho,
 }) => {
 
+  useEffect(()=>{
+    //console.log(carrinho);
+  },[carrinho]);
 
   useEffect(() => {
     const cart = PegaCarrinholocalStorage();

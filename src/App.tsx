@@ -52,7 +52,7 @@ const PegaCarrinholocalStorage = () =>{
     {
       const aux : ItemCarrinho[] = carrinho.map((itemCarrinho)=> itemCarrinho.id === item.id ? {...itemCarrinho,quantidade : itemCarrinho.quantidade+1} : itemCarrinho); 
       localStorage.setItem('carrinhoDFXC',JSON.stringify(aux));
-      setCarrinho( carrinho.map((itemCarrinho)=> itemCarrinho.id === item.id ? {...itemCarrinho,quantidade : itemCarrinho.quantidade+1} : itemCarrinho )   );
+      setCarrinho(prevCarrinho => prevCarrinho.map((itemCarrinho)=> itemCarrinho.id === item.id ? {...itemCarrinho,quantidade : itemCarrinho.quantidade+1} : itemCarrinho )   );
     }else
     {
       //cria produto no carrinho
@@ -74,7 +74,7 @@ const PegaCarrinholocalStorage = () =>{
 
     const aux : ItemCarrinho[] = carrinho.map((itemCarrinho)=> itemCarrinho.id === item.id ? {...itemCarrinho,quantidade : itemCarrinho.quantidade-1} : itemCarrinho); 
     localStorage.setItem('carrinhoDFXC',JSON.stringify(aux));
-    setCarrinho( carrinho.map((itemCarrinho)=> itemCarrinho.id === item.id ? {...itemCarrinho,quantidade : itemCarrinho.quantidade-1} : itemCarrinho )   );
+    setCarrinho( prevCarrinho => prevCarrinho.map((itemCarrinho)=> itemCarrinho.id === item.id ? {...itemCarrinho,quantidade : itemCarrinho.quantidade-1} : itemCarrinho )   );
   }
 
   //Deleta um item do carrinho
@@ -82,7 +82,7 @@ const PegaCarrinholocalStorage = () =>{
     
     const aux : ItemCarrinho[] = carrinho.filter((itemCarrinho)=> itemCarrinho.id !== item.id); 
     localStorage.setItem('carrinhoDFXC',JSON.stringify(aux));
-    setCarrinho( carrinho.filter((itemCarrinho)=> itemCarrinho.id !== item.id) );
+    setCarrinho( prevCarrinho => prevCarrinho.filter((itemCarrinho)=> itemCarrinho.id !== item.id) );
   }
 
   //filtra as frutas baseado no que esta escrito no input da homepage

@@ -35,13 +35,7 @@ const Item: React.FC<Props> = ({ item, carrinho, AddItemCarrinho }) => {
   const [qtdNoCarrinho, setQtdNoCarrinho] = useState(0);
 
   useEffect(() => {
-    // let qtd = carrinho.find((x) => x.id === item.id);
-    // if (qtd) {
-    //   setQtdNoCarrinho(qtd.quantidade);
-    // }
-
-    
-
+    //console.log(carrinho);
   }, [carrinho]);
 
 

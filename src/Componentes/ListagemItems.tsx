@@ -19,7 +19,7 @@ import {Item,ItemCarrinho,InfoNutricional} from '../Interfaces';
 const ListagemItems:React.FC<Props> = ({itens,setItens,itensOriginal,setItensOriginal,carrinho,AddItemCarrinho}) => {
 
   useEffect(() => {
-    //console.log();
+    //console.log(carrinho);
   }, [carrinho]);
   
   return(
